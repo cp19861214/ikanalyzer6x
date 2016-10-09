@@ -246,6 +246,7 @@ public class Dictionary {
 				is = this.getClass().getClassLoader().getResourceAsStream(extDictName);
 				// 如果找不到扩展的字典，则忽略
 				if (is == null) {
+					System.out.println("扩展词典不存在" + extDictName);
 					continue;
 				}
 				try {
@@ -296,6 +297,7 @@ public class Dictionary {
 				is = this.getClass().getClassLoader().getResourceAsStream(extStopWordDictName);
 				// 如果找不到扩展的字典，则忽略
 				if (is == null) {
+					System.out.println("扩展停止词典不存在" + extStopWordDictName);
 					continue;
 				}
 				try {
