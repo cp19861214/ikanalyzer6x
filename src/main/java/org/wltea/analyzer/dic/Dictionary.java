@@ -242,13 +242,14 @@ public class Dictionary {
 			InputStream is = null;
 			for (String extDictName : extDictFiles) {
 				// 读取扩展词典文件
-				System.out.println("加载扩展词典：" + extDictName);
+				System.out.println("加载扩展词典2：" + extDictName);
 				is = this.getClass().getClassLoader().getResourceAsStream(extDictName);
 				// 如果找不到扩展的字典，则忽略
 				if (is == null) {
 					System.out.println("扩展词典不存在" + extDictName);
 					continue;
 				}
+				System.out.println("发现扩展词典：" + extDictName);
 				try {
 					BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"), 512);
 					String theWord = null;
@@ -292,7 +293,7 @@ public class Dictionary {
 		if (extStopWordDictFiles != null) {
 			InputStream is = null;
 			for (String extStopWordDictName : extStopWordDictFiles) {
-				System.out.println("加载扩展停止词典：" + extStopWordDictName);
+				System.out.println("加载扩展停止词典2：" + extStopWordDictName);
 				// 读取扩展词典文件
 				is = this.getClass().getClassLoader().getResourceAsStream(extStopWordDictName);
 				// 如果找不到扩展的字典，则忽略
@@ -300,6 +301,7 @@ public class Dictionary {
 					System.out.println("扩展停止词典不存在" + extStopWordDictName);
 					continue;
 				}
+				System.out.println("发现扩展停止词典：" + extStopWordDictName);
 				try {
 					BufferedReader br = new BufferedReader(new InputStreamReader(is, "UTF-8"), 512);
 					String theWord = null;
